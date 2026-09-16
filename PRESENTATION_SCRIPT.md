@@ -8,11 +8,11 @@
 
 ---
 
-## 📢 1. AI Content Publishing & Scheduling
+## 📢 1. Multi platform Content Publishing & Scheduling
 **Visual Action (Web View):** Go to the "Content Manager" page. Input some product details, generate a caption using the AI tool, and schedule a post.
 
 **Script:**
-> " First is the AI Content Publisher. A seller can input basic product details, and the system will generate appropriate captions. I also built a scheduling function, that uses a mock publishing system to simulates the API interaction."
+> " First is the Multi platform Content Publisher. A seller can input basic product details, and the system will generate appropriate captions. I also built a scheduling function, that uses a mock publishing system to simulates the API interaction."
 
 **Code Highlight:**
 * **Open:** `backend/controllers/contentController.js`

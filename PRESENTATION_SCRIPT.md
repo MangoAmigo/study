@@ -17,7 +17,8 @@
 **Code Highlight:**
 * **Open:** `backend/controllers/profileController.js` (or `backend/middleware/authMiddleware.js`)
 * **Show:** Highlight the `inviteCollaborator` logic.
-* **Script:** "If we look at the backend, we use JWT for secure sessions. In our profile controller, when inviting a collaborator, we create a new user tied to the parent's ID and push their specific permissions into an array. Our React frontend then reads this and dynamically hides UI tabs based on these permissions."
+* **Script:** 
+> "In my backend code , when inviting a collaborator, I create a new user tied to the parent's ID and push their specific permissions into an array. the React frontend then reads this and dynamically hides UI tabs based on these permissions."
 
 ---
 
@@ -30,7 +31,8 @@
 **Code Highlight:**
 * **Open:** `backend/controllers/contentController.js`
 * **Show:** Highlight the `CAPTION_GENERATOR` block and then scroll down to highlight `triggerPostReminders`.
-* **Script:** "Here is our caption generator logic. But more importantly, this `triggerPostReminders` function acts as our Cron job. It checks the database for scheduled posts. If a live Facebook token exists, it pushes to the Graph API. If not, it safely mocks the success and updates the database status to 'Published', proving our logic works seamlessly either way."
+* **Script:** 
+> "Here is the caption generator logic. But more importantly, this `triggerPostReminders` function acts as the Cron job. It checks the database for scheduled posts. If a live Facebook token exists, it pushes to the Graph API. If not, it safely mimics the success and updates the database status to 'Published'. "
 
 ---
 
@@ -43,7 +45,8 @@
 **Code Highlight:**
 * **Open:** `backend/controllers/faqController.js`
 * **Show:** Highlight the `processCommentForFAQ` function.
-* **Script:** "In our `processCommentForFAQ` function, you can see the 'brain' of the auto-responder. We take the incoming comment, convert it to lowercase, and check if it matches any saved keywords using Javascript array methods. If a match is found, we trigger our Facebook Graph API utility to post the reply."
+* **Script:** 
+> "In our `processCommentForFAQ` function, you can see the 'brain' of the auto-responder. I take the incoming comment, convert it to lowercase, and check if it matches any saved keywords using Javascript array methods. If match is found, I trigger the Facebook Graph API utility to post the reply."
 
 ---
 
@@ -51,12 +54,13 @@
 **Visual Action (Web View):** Show the marketplace or a specific "Design Job" view, preferably one that is currently active.
 
 **Script:**
-> "BrandBondhu also connects sellers with freelance designers. We had to manage complex states like escrow funds and job approvals. We implemented a robust state machine in our database to handle this."
+> "BrandBondhu also connects sellers with freelance designers. I managed complex states like escrow funds and job approvals. by implementing a state machine in our database to handle this."
 
 **Code Highlight:**
 * **Open:** `backend/models/DesignJob.js`
 * **Show:** Highlight the `status` and `escrowStatus` enums in the model schema.
-* **Script:** "In our Mongoose model, the job status strictly moves from 'Requested' to 'Delivered' to 'Approved'. We also track 'escrowStatus'. Our controllers enforce these transitions, ensuring that funds are only 'Released' or 'Refunded' under the correct conditions, providing a secure simulated environment."
+* **Script:** 
+> "In the Mongoose model, the job status strictly moves from 'Requested' to 'Delivered' to 'Approved'. I also kept track  of 'escrowStatus'. The controllers enforce these transitions, ensuring that funds are only 'Released' or 'Refunded' under the correct conditions, providing a secure simulated environment."
 
 ---
 
@@ -64,12 +68,13 @@
 **Visual Action (Web View):** Go to the "Billing" or "Upgrade Plan" page. Click through the mock bKash/payment gateway interface.
 
 **Script:**
-> "To monetize the platform, we implemented a tiered subscription system with AI credit metering. Every time a user generates AI content, it deducts a credit. We also built a mock payment gateway that simulates the bKash or SSLCommerz checkout experience."
+> "To monetize the platform, I implemented a tiered subscription system with AI credit metering. Every time a user generates AI content, it deducts a credit. I built a mock payment gateway that simulates the bKash or SSLCommerz checkout experience."
 
 **Code Highlight:**
 * **Open:** `backend/controllers/paymentController.js`
 * **Show:** Highlight `initiatePayment` and then `confirmPayment`.
-* **Script:** "Here, `initiatePayment` creates a 'Pending' transaction. Once the user completes the mock UI flow, `confirmPayment` is called. It finds the transaction, marks it 'Completed', upgrades the user's subscription tier, and refills their AI credits."
+* **Script:** 
+> "Here, `initiatePayment` creates a 'Pending' transaction. Once the user completes the mock UI flow, `confirmPayment` is called. It finds the transaction, marks it 'Completed', upgrades the user's subscription tier, and refills their AI credits."
 
 ---
 
@@ -77,17 +82,11 @@
 **Visual Action (Web View):** Show the Analytics Dashboard with the charts rendered.
 
 **Script:**
-> "Finally, we have our Analytics dashboard. It performs sentiment analysis on comments and tracks competitor metrics. Since web scraping social media is heavily blocked, we built a data simulation module for demonstration."
+> "Finally, here's the Analytics dashboard. It performs sentiment analysis on comments and tracks competitor metrics. Since web scraping social media is heavily blocked, I built a mock data simulation module for demonstration."
 
 **Code Highlight:**
 * **Open:** `backend/controllers/analyticsController.js`
 * **Show:** Highlight `getSentimentAnalysis` or `addCompetitor`.
-* **Script:** "In `getSentimentAnalysis`, we filter and count 'positive', 'negative', and 'neutral' comments to feed our React charts. For competitors, we simulate data generation here, ensuring our frontend has realistic metrics to display and test against."
+* **Script:** 
+> "In `getSentimentAnalysis`, I filter and count 'positive', 'negative', and 'neutral' comments to feed our React charts. For competitors, I simulate data generation here, ensuring our frontend has realistic metrics to display and test against."
 
----
-
-## 👋 8. Conclusion
-**Visual Action (Web View):** Return to the main Dashboard or a 'Thank You' slide/screen.
-
-**Script:**
-> "To summarize, Group 2 successfully built the entire operational core of BrandBondhu. We handled secure authentication, complex state management for design jobs, dynamic AI credit metering, and robust simulated integrations for payments and social media. Thank you, we are now open to questions."
